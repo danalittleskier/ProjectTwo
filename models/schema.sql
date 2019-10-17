@@ -1,3 +1,4 @@
+
 -- DROP DATABASE IF EXISTS exampledb;
 -- CREATE DATABASE exampledb;
 
@@ -8,8 +9,7 @@ USE toolzDEV_db;
 
 -- User Table
 CREATE TABLE `User_Table`
-(
-  `user_id` INT AUTO_INCREMENT NOT NULL,
+(`user_id` INT AUTO_INCREMENT NOT NULL,
   `user_first_name` VARCHAR
 (75) NOT NULL,
   `user_last_name` VARCHAR
