@@ -3,6 +3,7 @@
 -- CREATE DATABASE exampledb;
 
 DROP DATABASE IF EXISTS toolzDEV_db;
+DROP DATABASE IF EXISTS testdb;
 CREATE DATABASE toolzDEV_db;
 
 USE toolzDEV_db;
