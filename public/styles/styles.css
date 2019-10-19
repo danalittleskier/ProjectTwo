@@ -1,4 +1,4 @@
-html, body {
+html, body, .login-box {
   height: 100%;
 }
 
@@ -29,7 +29,7 @@ img {
 
 .tools-image {
   /* Use "linear-gradient" to add a darken background effect to the image */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/public/images/tools-image1.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/tools-image1.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
