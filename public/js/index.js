@@ -97,3 +97,11 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+//Initialize Materialize
+
+//Event listener to handle login request
+$("#runModal").on("click", function() {
+  console.log("this works");
+  $("#login").modal();
+});
