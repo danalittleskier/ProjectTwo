@@ -22,7 +22,7 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/users", function(req, res) {
+  app.get("/test", function(req, res) {
     db.User.findAll({}).then(function(dbUsers) {
       res.render("users", {
         users: dbUsers

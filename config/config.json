@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "shadyM4C",
-    "database": "toolzDEV_db",
+    "password": "password1234",
+    "database": "toolzdb",
     "host": "localhost",
     "dialect": "mysql"
   },
