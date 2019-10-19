@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+}
+
 /* Minimalist CSS reset > https://alligator.io/css/minimal-css-reset/ */
 html {
   box-sizing: border-box;
@@ -21,4 +25,23 @@ ol, ul {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.tools-image {
+  /* Use "linear-gradient" to add a darken background effect to the image */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/public/images/tools-image1.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.tool-search {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
 }
