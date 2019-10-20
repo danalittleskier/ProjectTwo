@@ -21,6 +21,7 @@
     <div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4">
       <form action="GET">
         <div class="card-content">
+          <p class="align-center"><em>Share tools. Get stuff done.</em></p>
           <div class="input-field col s12">
             <input type="text" class="validate" name="tool" id="tool" placeholder="Search Tools" />
           </div>
@@ -36,9 +37,9 @@
   <div class="container">
 
     <div class="row">
-      <div class="col s12 m8 offset-2">
-        <h1>{{msg}}</h1>
+      <div class="col s12 m6 offset-2">
         <h3>Offer a tool for rent</h3>
+        
         <form action="POST">
 
           <div class="input-field">
@@ -55,7 +56,7 @@
           <div class="input-field">
             <!-- <i class="material-icons prefix">build</i> -->
             <select id="tool-category">
-              <option value="" disabled selected>Choose your option</option>
+              <option value="" disabled selected>Choose tool category</option>
               <option value="hand tools">Hand Tools</option>
               <option value="power tools">Power Tools</option>
               <option value="machine tools">Machine Tools</option>
@@ -77,17 +78,33 @@
             <i class="material-icons right">build</i>
           </button>
         </form>
-        <h3>Current Tools</h3>
-        <ul id="example-list" class="list-group">
-          {{#each tools}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="tools/{{this.id}}">{{this.name}} - {{this.description}} ${{this.price}} - </a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
+          </div>
+</div>
+</div>
+</div>
+
+        <div class="tools-image2">
+          <div class="container">
+        <h3 class="current-tools">Current Tools</h3>
+        <div class="row">
+          <div class="col s12">
+            {{#each tools}}
+            <div class="card blue darken-4" data-id="{{this.id}}">
+              <div class="card-content white-text">
+                <span class="card-title">{{this.name}}</span>
+                <p>{{this.description}}</p>
+                <p>${{this.price}}</p>
+              </div>
+              <div class="card-action">
+                <a href="tools/{{this.id}}">More info</a>
+                <a href="#">Rent</a>
+              </div>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+        </div>
+        </div>
     {{!-- Modal containing login information --}}
     <div class="modal" id="login">
       <div class="row">
@@ -128,8 +145,7 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
