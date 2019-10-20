@@ -11,10 +11,10 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Tool.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
-    Tool.hasMany(models.Member, {
-      onDelete: "cascade"
+    Tool.belongsTo(models.Member, {
+      foreignKey: {
+        allowNull: false
+      }
     });
   };
 
