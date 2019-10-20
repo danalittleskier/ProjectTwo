@@ -1,13 +1,13 @@
 module.exports = function(sequelize, DataTypes) {
   var Member = sequelize.define("Member", {
     // eslint-disable-next-line camelcase
-    user_first_name: DataTypes.STRING,
+    first_name: DataTypes.STRING,
     // eslint-disable-next-line camelcase
-    user_last_name: DataTypes.STRING,
+    ast_name: DataTypes.STRING,
     // eslint-disable-next-line camelcase
-    user_fullname: DataTypes.STRING,
+    fullname: DataTypes.STRING,
     // eslint-disable-next-line camelcase
-    user_address: DataTypes.STRING,
+    address: DataTypes.STRING,
     username: DataTypes.STRING
   });
 

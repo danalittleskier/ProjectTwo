@@ -1,9 +1,13 @@
 module.exports = function(sequelize, DataTypes) {
   var Tool = sequelize.define("Tool", {
     // eslint-disable-next-line camelcase
-    tool_name: DataTypes.STRING,
+    name: DataTypes.STRING,
+    // eslint-disable-next-line prettier/prettier
+    description: DataTypes.STRING,
     // eslint-disable-next-line camelcase
-    too_price: DataTypes.INTEGER
+    category: DataTypes.STRING,
+    // eslint-disable-next-line prettier/prettier
+    price: DataTypes.DECIMAL(10, 2) 
   });
 
   Tool.associate = function(models) {
