@@ -3,10 +3,10 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Tool.findAll({}).then(function(dbTools) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        tools: dbTools
       });
     });
   });
@@ -22,10 +22,19 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/test", function(req, res) {
-    db.User.findAll({}).then(function(dbUsers) {
-      res.render("users", {
-        users: dbUsers
+  // Load tool page and pass in an tool by id
+  app.get("/tools/:id", function(req, res) {
+    db.Tool.findOne({ where: { id: req.params.id } }).then(function(dbTool) {
+      res.render("tools", {
+        tool: dbTool
+      });
+    });
+  });
+
+  app.get("/tools", function(req, res) {
+    db.Tool.findAll({}).then(function(dbTools) {
+      res.render("tools", {
+        tools: dbTools
       });
     });
   });
