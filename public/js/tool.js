@@ -1,8 +1,11 @@
+/* eslint-disable camelcase */
 var $toolName = $("#tool-name");
 var $toolDescription = $("#tool-description");
 var $toolCategory = $("#tool-category");
 var $toolPrice = $("#tool-price");
 var $submitBtn = $("#post-tool");
+
+var $rentBtn = $("#rent");
 //var $toolList = $("#tool-list");
 
 $(document).ready(function() {
@@ -24,6 +27,16 @@ var API = {
     return $.ajax({
       url: "api/tools",
       type: "GET"
+    });
+  },
+  rentTool: function(transaction) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "api/rent",
+      data: JSON.stringify(transaction)
     });
   },
   deleteTools: function(id) {
@@ -60,5 +73,26 @@ var handleFormSubmit = function(event) {
   $toolPrice.val(0);
 };
 
+var handleRentSubmit = function(event) {
+  event.preventDefault();
+
+  var $rentToolId = $(this)[0].dataset.toolId;
+  var $rentOwnerId = $(this)[0].dataset.ownerId;
+  var $rentPrice = $(this)[0].dataset.toolPrice;
+
+  var transaction = {
+    tool_id: $rentToolId,
+    renter_id: 2,
+    owner_id: $rentOwnerId,
+    price: $rentPrice
+  };
+  console.log(transaction);
+
+  API.rentTool(transaction).then(function() {
+    //refreshExamples();
+  });
+};
+
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
+$rentBtn.on("click", handleRentSubmit);
