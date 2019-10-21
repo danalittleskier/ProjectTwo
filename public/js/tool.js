@@ -21,6 +21,9 @@ var API = {
       type: "POST",
       url: "api/tools",
       data: JSON.stringify(tool)
+    }).then(function() {
+      // Reload the page to get the updated list
+      location.reload();
     });
   },
   getTools: function() {
@@ -43,6 +46,9 @@ var API = {
     return $.ajax({
       url: "api/tools/" + id,
       type: "DELETE"
+    }).then(function() {
+      // Reload the page to get the updated list
+      location.reload();
     });
   }
 };
