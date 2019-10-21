@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 var db = require("../models");
 
 module.exports = function(app) {
@@ -12,6 +13,14 @@ module.exports = function(app) {
   app.post("/api/tools", function(req, res) {
     db.Tool.create(req.body).then(function(dbTool) {
       res.json(dbTool);
+    });
+  });
+
+  //Insert into Transactions table
+  app.post("/api/rent", function(req, res) {
+    console.log(req.body);
+    db.Transaction.create(req.body).then(function(dbTransaction) {
+      res.json(dbTransaction);
     });
   });
 
