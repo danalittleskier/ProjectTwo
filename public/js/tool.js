@@ -18,6 +18,9 @@ var API = {
       type: "POST",
       url: "api/tools",
       data: JSON.stringify(tool)
+    }).then(function() {
+      // Reload the page to get the updated list
+      location.reload();
     });
   },
   getTools: function() {
