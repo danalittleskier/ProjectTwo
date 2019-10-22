@@ -99,9 +99,13 @@ $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 //Initialize Materialize
-
 //Event listener to handle login request
 $("#runModal").on("click", function() {
   console.log("this works");
   $("#login").modal();
+});
+
+// Initialize Materialize Sidenav
+$(document).ready(function() {
+  $(".sidenav").sidenav();
 });
