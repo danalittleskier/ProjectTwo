@@ -109,3 +109,18 @@ $("#runModal").on("click", function() {
 $(document).ready(function() {
   $(".sidenav").sidenav();
 });
+
+// shrinking nav/future update
+// window.onscroll = function() {
+//   scrollFunction();
+// };
+
+// function scrollFunction() {
+//   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+//     document.getElementById("navbar").classList.add("transparent");
+//     document.getElementById("brand").style.fontSize = "25px";
+//   } else {
+//     document.getElementById("navbar").style.padding = "20px 10px";
+//     document.getElementById("brand").style.fontSize = "35px";
+//   }
+// }

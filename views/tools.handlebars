@@ -1,18 +1,19 @@
-
-
+<div class="tools-image2">
 <div class="container">
     <div class="row">
-        <div class="col-8 offset-2">
-            <div class="card mt-4">
-                <div class="card-body">
-                    <p><strong>Tool ID </strong> {{tool.id}}</p>
-                    <p><strong>Type </strong> {{tool.name}}</p>
+        <div class="col s12">
+            <div class="card blue darken-4">
+                <div class="card-content white-text">
+                    <span class="card-title">{{tool.name}}</span>
+                    <p>Tool ID #{{tool.id}}</p>
                     <p><strong>Description </strong> {{tool.description}}</p>
-                    <p><strong>Price </strong> {{tool.price}}</p>
-                    <a href="/">← Back To Home</a>
+                    <p><strong>Price: </strong> ${{tool.price}}</p>
+                </div>
+                <div class="card-action">
+                    <a class="white-text" href="/">← Back To Home</a>
                 </div>
             </div>
         </div>
     </div>
-
+</div>
 </div>
