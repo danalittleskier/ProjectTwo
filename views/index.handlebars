@@ -1,7 +1,8 @@
 {{!-- nav --}}
-<nav>
+{{!-- <div class="navbar-fixed"> --}}
+<nav class="z-depth-0" id="navbar">
   <div class="nav-wrapper blue darken-4">
-    <a href="#!" class="brand-logo center">ToolZ</a>
+    <a href="#!" class="brand-logo center" id="brand">Toolz</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li><a href="products.html">Rent</a></li>
@@ -10,6 +11,7 @@
     </ul>
   </div>
 </nav>
+{{!-- </div> --}}
 
 <ul class="sidenav" id="mobile-demo">
   <li><a href="products.html">Rent</a></li>
@@ -21,7 +23,7 @@
     <div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4">
       <form action="GET">
         <div class="card-content">
-          <p class="align-center"><em>Share tools. Get stuff done.</em></p>
+          <p class="center-me"><em>Share tools. Rent tools. Get stuff done.</em></p>
           <div class="input-field col s12">
             <input type="text" class="validate" name="tool" id="tool" placeholder="Search Tools" />
           </div>
@@ -37,14 +39,23 @@
   <div class="container">
 
     <div class="row">
-      <div class="col s12 m6 offset-2">
-        <h3>Offer a tool for rent</h3>
+      <div class="col s12 m6">
+        <h3 class="heading-text rent-text">Offer your tools for rent</h3>
+        <p class="rent-text">Remember that tile saw you bought a few years ago? Chances are its just sitting there
+          collecting dust.</p><br>
+        <p class="rent-text"><strong>Why not rent it out for a day or two to make some extra cash?</strong></p>
+        <br>
+        <p class="rent-text">Toolz has created a community of contractors, craftsman, and hobbyists that own every tool
+          you can think of, for every specialty project you can imagine. Toolz allows you to borrow the tools you might buy and use only once - and rent out the tools that are collecting dust.</p>
+      </div>
+      <div class="col s12 m6">
+        <h4 class="heading-text">Enter your info:</h4>
 
         <form action="POST">
 
           <div class="input-field">
             <!-- <i class="material-icons prefix">account_circle</i> -->
-            <input id="first-name" type="text" value="Tim Toolman Taylor">
+            <input id="first-name" type="text" placeholder="Tim 'The Toolman' Taylor">
             <label for="first-name">First Name</label>
           </div>
           <div class="input-field">
@@ -85,11 +96,15 @@
 
 <div class="tools-image2">
   <div class="container">
-    <h3 class="current-tools">Current Tools</h3>
     <div class="row">
       <div class="col s12">
-        {{#each tools}}
-        <div class="card blue darken-4" >
+        <h3 class="heading-text-white">Current Tools</h3>
+      </div>
+    </div>
+    <div class="row">
+      {{#each tools}}
+      <div class="col s12 m4">
+        <div class="card blue darken-4">
           <div class="card-content white-text">
             <span class="card-title">{{this.name}} </span> <span>Owner {{this.MemberId}}</span>
             <p>{{this.description}}</p>
@@ -98,12 +113,12 @@
           <div class="card-action">
             <a href="tools/{{this.id}}">More info</a>
             {{!-- <a href="">Rent</a> --}}
-            <button id="rent" data-tool-id="{{this.id}}" data-owner-id="{{this.MemberId}}"
-          data-tool-price="{{this.price}}">Rent</button>
+            <button class="btn waves-effect waves-light blue darken-2" id="rent" data-tool-id="{{this.id}}"
+              data-owner-id="{{this.MemberId}}" data-tool-price="{{this.price}}">Rent<i class="material-icons right">build</i></button>
           </div>
         </div>
-        {{/each}}
       </div>
+      {{/each}}
     </div>
   </div>
 </div>

@@ -27,10 +27,10 @@ img {
   height: auto;
 }
 
+
 .tools-image {
-  /* Use "linear-gradient" to add a darken background effect to the image */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/tools-image1.jpg");
-  height: 100%;
+  height: 70%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -38,19 +38,35 @@ img {
 }
 
 .tools-image2 {
-  /* Use "linear-gradient" to add a darken background effect to the image */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/tools-image2.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  
 }
 
-.current-tools {
+.tools-page-image2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/tools-image2.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.tool-card {
+  padding-left: 20px;
+}
+
+.heading-text {
+  margin: 50px 0 30px 0;
+  color: #1976d2
+}
+
+.heading-text-white {
+  margin-top: 50px;
   color: white;
-  margin-top: 25px;
 }
 
 .tool-search {
@@ -62,6 +78,22 @@ img {
   color: white;
 }
 
-.brand-logo, h1, h2, h3, a, p {
-  font-family: 'Quicksand', sans-serif;
+.rent-text {
+  padding-right: 40px;
+}
+
+.brand-logo, h1, h2, h3, h4 {
+  font-family: 'Carter One', cursive;
+} 
+
+a, p {
+  font-family: 'Spectral', serif;
+}
+
+#offer {
+  padding-bottom: 65px;
+}
+
+.center-me {
+  padding-left: 12%;
 }
