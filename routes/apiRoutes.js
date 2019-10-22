@@ -29,5 +29,6 @@ module.exports = function(app) {
     db.Tool.destroy({ where: { id: req.params.id } }).then(function(dbTool) {
       res.json(dbTool);
     });
+    
   });
 };
