@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 
 var request;
 
-describe("GET /api/examples", function() {
+describe("GET /api/tools", function() {
   // Before each test begins, create a new request server for testing
   // & delete all examples from the db
   beforeEach(function() {
@@ -17,7 +17,7 @@ describe("GET /api/examples", function() {
     return db.sequelize.sync({ force: true });
   });
 
-  it("should find all examples", function(done) {
+  it("should find all tools", function(done) {
     // Add some examples to the db to test with
     db.Tool.bulkCreate([
       {
