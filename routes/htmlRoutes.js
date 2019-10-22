@@ -1,5 +1,8 @@
 var db = require("../models");
 
+// Requiring our custom middleware for checking if a user is logged in
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -9,6 +12,24 @@ module.exports = function(app) {
         tools: dbTools
       });
     });
+  });
+
+  app.get("/login", function(req, res) {
+    res.render("login");
+    // db.Tool.findAll({}).then(function(dbTools) {
+    // });
+  });
+
+  app.get("/signup", function(req, res) {
+    res.render("signup");
+    // db.Tool.findAll({}).then(function(dbTools) {
+    // });
+  });
+
+  app.get("/members", isAuthenticated, function(req, res) {
+    res.render("members");
+    // db.Tool.findAll({}).then(function(dbTools) {
+    // });
   });
 
   // Load example page and pass in an example by id
