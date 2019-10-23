@@ -58,8 +58,6 @@ module.exports = function(app) {
     });
   });
 
-  
-
   //Insert into Transactions table
   app.post("/api/rent", function(req, res) {
     console.log(req.body);

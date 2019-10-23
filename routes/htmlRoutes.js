@@ -71,10 +71,6 @@ module.exports = function(app) {
       });
     });
   });
-  app.get("/category", function (req,res){
-    db
-  })
-
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
