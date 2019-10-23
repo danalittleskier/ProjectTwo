@@ -26,6 +26,18 @@ module.exports = function(app) {
     // });
   });
 
+  app.get("/categories/:cats", function(req, res) {
+    db.Tool.findAll({
+      where: {
+        category: req.params.cats
+      }
+    }).then(function(dbTools) {
+      res.render("category", {
+        tools: dbTools
+      });
+    });
+  });
+
   app.get("/members", isAuthenticated, function(req, res) {
     res.render("members");
     // db.Tool.findAll({}).then(function(dbTools) {
@@ -59,6 +71,9 @@ module.exports = function(app) {
       });
     });
   });
+  app.get("/category", function (req,res){
+    db
+  })
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
