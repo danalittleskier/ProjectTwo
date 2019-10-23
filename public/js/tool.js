@@ -1,11 +1,6 @@
 /* eslint-disable camelcase */
-var $toolName = $("#tool-name");
-var $toolDescription = $("#tool-description");
-var $toolCategory = $("#tool-category");
-var $toolPrice = $("#tool-price");
 var $submitBtn = $("#post-tool");
-
-var $rentBtn = $("#rent");
+var $rentBtn = $(".rent");
 //var $toolList = $("#tool-list");
 
 $(document).ready(function() {
@@ -40,6 +35,9 @@ var API = {
       type: "POST",
       url: "api/rent",
       data: JSON.stringify(transaction)
+    }).then(function() {
+      // Reload the page to get the updated list
+      location.reload();
     });
   },
   deleteTools: function(id) {
@@ -56,11 +54,18 @@ var API = {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
+  var $toolName = $("#tool-name");
+  var $toolDescription = $("#tool-description");
+  var $toolCategory = $("#tool-category");
+  var $toolPrice = $("#tool-price");
+
   var tool = {
     name: $toolName.val().trim(),
     description: $toolDescription.val().trim(),
     category: $toolCategory.val().trim(),
     price: $toolPrice.val().trim(),
+    renter: 2,
+    rented: false,
     MemberId: 1
   };
 
@@ -92,7 +97,7 @@ var handleRentSubmit = function(event) {
     owner_id: $rentOwnerId,
     price: $rentPrice
   };
-  console.log(transaction);
+  console.log("The transaction" + transaction);
 
   API.rentTool(transaction).then(function() {
     //refreshExamples();

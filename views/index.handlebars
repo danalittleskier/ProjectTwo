@@ -55,7 +55,7 @@
 
           <div class="input-field">
             <!-- <i class="material-icons prefix">account_circle</i> -->
-            <input id="first-name" type="text" placeholder="Tim 'The Toolman' Taylor">
+            <input id="first-name" data-renter-id="1" type="text" placeholder="Tim 'The Toolman' Taylor">
             <label for="first-name">First Name</label>
           </div>
           <div class="input-field">
@@ -113,10 +113,18 @@
           <div class="card-action">
             <a href="tools/{{this.id}}">More info</a>
             {{!-- <a href="">Rent</a> --}}
-            <button class="btn waves-effect waves-light blue darken-2" id="rent" data-tool-id="{{this.id}}"
-              data-owner-id="{{this.MemberId}}" data-tool-price="{{this.price}}">Rent<i class="material-icons right">build</i></button>
+            {{#if this.rented}}
+            <button class="btn waves-effect waves-light gray darken-2">OUT
+              <i class="material-icons right">build</i>
+              </button>
+            {{else}}
+            <button class="btn waves-effect waves-light blue darken-2 rent" data-tool-id="{{this.id}}"
+              data-owner-id="{{this.MemberId}}" data-tool-price="{{this.price}}">Rent
+              <i class="material-icons right">build</i>
+            </button>
+            {{/if}}
           </div>
-        </div>
+          </div>
       </div>
       {{/each}}
     </div>
