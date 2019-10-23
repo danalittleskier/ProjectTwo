@@ -1,49 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Tool View - Toolz</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
-</head>
-
-<body>
-    <nav>
-        <div class="nav-wrapper blue darken-4">
-            <a href="#!" class="brand-logo center">ToolZ</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="products.html">Rent</a></li>
-                <li><a href="/login" data-target="login" class="btn modal-trigger">Login</a></li>
-
-            </ul>
-        </div>
-    </nav>
-    <div class="tools-image2">
-        <div class="container">
-            <div class="row">
-                <div class="col s12">
-                    <div class="card blue darken-4">
-                        <div class="card-content white-text">
-                            <span class="card-title">{{tool.name}}</span>
-                            <p>Tool ID #{{tool.id}}</p>
-                            <p><strong>Description </strong> {{tool.description}}</p>
-                            <p><strong>Price: </strong> ${{tool.price}}</p>
-                        </div>
-                        <div class="card-action">
-                            <a class="white-text" href="/">← Back To Home</a>
-                        </div>
+<div class="tools-image2">
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="card blue darken-4">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{tool.name}}</span>
+                        <p>Tool ID #{{tool.id}}</p>
+                        <p><strong>Description </strong> {{tool.description}}</p>
+                        <p><strong>Price: </strong> ${{tool.price}}</p>
+                        {{#if tool.rented}}
+                        <button class="btn waves-effect waves-light gray darken-2">OUT
+                            <i class="material-icons right">build</i>
+                        </button>
+                        {{else}}
+                        <button class="btn waves-effect waves-light blue darken-2 rent" data-tool-id="{{tool.id}}"
+                            data-owner-id="{{tool.MemberId}}" data-tool-price="{{tool.price}}">Rent
+                            <i class="material-icons right">build</i>
+                        </button>
+                        {{/if}}
+                    </div>
+                    <div class="card-action">
+                        <a class="white-text" href="/">← Back To Home</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/login.js"></script>
-
-</body>
-
-</html>
+</div>

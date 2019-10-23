@@ -53,8 +53,19 @@ module.exports = function(app) {
   //Insert into Transactions table
   app.post("/api/rent", function(req, res) {
     console.log(req.body);
-    db.Transaction.create(req.body).then(function(dbTransaction) {
-      res.json(dbTransaction);
+    db.Tool.update(
+      {
+        rented: true
+      },
+      {
+        where: {
+          id: req.body.tool_id
+        }
+      }
+    ).then(function() {
+      db.Transaction.create(req.body).then(function(dbTransaction) {
+        res.json(dbTransaction);
+      });
     });
   });
 
