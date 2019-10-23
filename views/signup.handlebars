@@ -5,12 +5,10 @@
     <title>Passport Authentication</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-    <link href="stylesheets/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
 
 <body>
-    {{!-- nav --}}
     <nav>
         <div class="nav-wrapper blue darken-4">
             <a href="#!" class="brand-logo center">ToolZ</a>
@@ -18,34 +16,41 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="products.html">Rent</a></li>
                 <li><a href="/login" data-target="login" class="btn modal-trigger">Login</a></li>
-    
+
             </ul>
         </div>
     </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h2>Sign Up Form</h2>
-                <form class="signup">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="email-input" placeholder="Email">
+
+    <div class="tools-image2">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card blue darken-4 form-padding">
+                        <h2 class="heading-text-white">Sign Up Form</h2>
+                        <form class="signup">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="email-input" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="password-input" placeholder="Password">
+                            </div>
+                            <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span> <span class="msg"></span>
+                            </div>
+                            <button type="submit" class="btn waves-effect waves-light blue darken-2">Sign Up <i
+                                    class="small material-icons">person_add</i></button>
+                        </form>
+                        <br />
+                        <p>Or log in <a href="/login">here ></a></p>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="password-input" placeholder="Password">
-                    </div>
-                    <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                        <span class="sr-only">Error:</span> <span class="msg"></span>
-                    </div>
-                    <button type="submit" class="btn btn-default">Sign Up</button>
-                </form>
-                <br />
-                <p>Or log in <a href="/login">here</a></p>
+                </div>
             </div>
         </div>
     </div>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/signup.js"></script>
