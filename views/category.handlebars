@@ -1,0 +1,39 @@
+<nav class="z-depth-0" id="navbar">
+  <div class="nav-wrapper blue darken-4">
+    <a href="#!" class="brand-logo center" id="brand">Toolz</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="products.html">Rent</a></li>
+      <li><a href="/login" data-target="login" class="btn modal-trigger">Login</a></li>
+
+    </ul>
+  </div>
+</nav>
+<div>
+    {{#each tool}}
+        {{tool.name}}
+        {{tool.category}}
+        {{tool.price}}
+     {{/each}}   
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="../public/images/ego-cordless-chainsaws-cs1804-4f_1000.jpg">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">18 in. 56-Volt Lithium-ion Cordless Electric Chainsaw Kit with New 5.0 Ah Battery, 210-Watt charger<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">Home Depot Link. Get for Less</a></p>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Chainsaw<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ 

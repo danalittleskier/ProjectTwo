@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 var db = require("../models");
 var passport = require("../config/passport");
 
@@ -42,6 +41,15 @@ module.exports = function(app) {
       res.json(dbTool);
     });
   });
+
+  //Get all tools where category matches a given value
+  // app.get("/api/categories/:category", function(req, res) {
+  //   db.Tool.findAll({
+  //     where: { category: req.params.category }
+  //   }).then(function(dbTool) {
+  //     res.json(dbTool);
+  //   });
+  // });
 
   // Create a new tool
   app.post("/api/tools", function(req, res) {
