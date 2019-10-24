@@ -11,11 +11,21 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
+    console.log(req.body);
     db.User.create({
       email: req.body.email,
       password: req.body.password
     })
       .then(function() {
+        db.Member.create({
+          // eslint-disable-next-line camelcase
+          first_name: req.body.firstName,
+          // eslint-disable-next-line camelcase
+          last_name: req.body.lastName,
+          zip: req.body.zip,
+          username: req.body.username,
+          email: req.body.email
+        });
         res.redirect("/members");
       })
       .catch(function(err) {
