@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
     category: DataTypes.STRING,
     // eslint-disable-next-line prettier/prettier
     price: DataTypes.DECIMAL(10, 2),
-    rented: DataTypes.BOOLEAN,
+    rented: { type: DataTypes.BOOLEAN, defaultValue: false },
     renter: DataTypes.STRING
   });
 
