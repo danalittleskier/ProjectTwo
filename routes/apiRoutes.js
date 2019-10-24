@@ -42,14 +42,20 @@ module.exports = function(app) {
     });
   });
 
-  //Get all tools where category matches a given value
-  // app.get("/api/categories/:category", function(req, res) {
-  //   db.Tool.findAll({
-  //     where: { category: req.params.category }
-  //   }).then(function(dbTool) {
-  //     res.json(dbTool);
-  //   });
-  // });
+  // Get all tools where category matches a given value
+  app.get("/api/tools/:cat", function(req, res) {
+    var categoryInput = req.params.cat.replace(/\+/g, " ");
+    db.Tool.findAll({
+      where: { category: categoryInput }
+    })
+      .then(function(dbTool) {
+        console.log("dbTool: ", dbTool);
+        res.json(dbTool.Tool);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  });
 
   // Create a new tool
   app.post("/api/tools", function(req, res) {

@@ -27,6 +27,14 @@ var API = {
       type: "GET"
     });
   },
+  getToolsByCategory: function(tools) {
+    return $.ajaz({
+      type: "GET",
+      url: "api/tools" + category
+    }).then(function() {
+      console.log(tools);
+    });
+  },
   rentTool: function(transaction) {
     return $.ajax({
       headers: {
