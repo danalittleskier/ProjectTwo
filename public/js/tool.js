@@ -40,6 +40,12 @@ var API = {
       location.reload();
     });
   },
+  searchTool: function(searchTerm) {
+    return $.ajax({
+      url: "search/" + searchTerm,
+      type: "GET"
+    });
+  },
   deleteTools: function(id) {
     return $.ajax({
       url: "api/tools/" + id,
@@ -103,6 +109,15 @@ var handleRentSubmit = function(event) {
     //refreshExamples();
   });
 };
+
+// eslint-disable-next-line no-unused-vars
+function triggerSearch(text) {
+  event.preventDefault();
+
+  API.searchTool(text).then(function() {
+    //refreshExamples();
+  });
+}
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
