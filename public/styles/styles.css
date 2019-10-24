@@ -71,8 +71,17 @@ img {
   font-family: 'Carter One', cursive;
 }
 
+.tool-submit {
+  background-color: #728F7A;
+}
+
+.tool-submit:hover{
+  background-color: #424242;
+}
+
 .rent-text {
   padding-right: 40px;
+  color: #424242;
 }
 
 .brand-logo, h1, h2, h3, h4 {
@@ -91,11 +100,63 @@ a, p {
   padding-left: 12%;
 }
 
-.input-field input[type=text]:focus + label {
-  color: #000;
-}
 
-.input-field input[type=text]:focus {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000;
-}
+    /* Inactive/Active Default input field color */
+    .input-field input[type]:not([readonly]),
+    .input-field input[type]:focus:not([readonly]),
+    .input-field textarea:not([readonly]),
+    .input-field textarea:focus:not([readonly]) {
+        border-bottom: 1px solid #728F7A;
+        box-shadow: 0 1px 0 0 #728F7A;
+    }
+
+    /* Inactive/Active Default input label color */
+    .input-field input[type]:focus:not([readonly])+label,
+    .input-field textarea:focus:not([readonly])+label {
+        color: #728F7A;
+    }
+
+    /* Active/Inactive Invalid input field colors */
+    .input-field input[type].invalid,
+    .input-field input[type].invalid:focus,
+    .input-field textarea.invalid,
+    .input-field textarea.invalid:focus {
+        border-bottom: 1px solid #e57373;
+        box-shadow: 0 1px 0 0 #e57373;
+    }
+
+    /* Active/Inactive Invalid input label color */
+    .input-field input[type].invalid:focus+label,
+    .input-field input[type].invalid~.helper-text::after,
+    .input-field input[type].invalid:focus~.helper-text::after, 
+    .input-field textarea.invalid:focus+label,
+    .input-field textarea.invalid~.helper-text::after,
+    .input-field textarea.invalid:focus~.helper-text::after {
+        color: #e57373;
+    }
+
+    /* Active/Inactive Valid input field color */
+    .input-field input[type].valid,
+    .input-field input[type].valid:focus,
+    .input-field textarea.valid,
+    .input-field textarea.valid:focus {
+        border-bottom: 1px solid #728F7A;
+        box-shadow: 0 1px 0 0 #728F7A;
+    }
+
+    /* Active/Inactive Valid input label color */
+    .input-field input[type].valid:focus+label,
+    .input-field input[type].valid~.helper-text::after,
+    .input-field input[type].valid:focus~.helper-text::after,
+    .input-field textarea.valid:focus+label,
+    .input-field textarea.valid~.helper-text::after,
+    .input-field textarea.valid:focus~.helper-text::after {
+        color: #728F7A;
+    }
+
+    input.select-dropdown:focus {
+      border-bottom: 1px solid #728F7A;
+      -webkit-box-shadow: 0 1px 0 0 #728F7A;
+              box-shadow: 0 1px 0 0 #728F7A;
+    }
+    
