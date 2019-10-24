@@ -1,5 +1,6 @@
 var db = require("../models");
 var passport = require("../config/passport");
+var Op = db.Sequelize.Op;
 
 module.exports = function(app) {
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
@@ -50,6 +51,19 @@ module.exports = function(app) {
   //     res.json(dbTool);
   //   });
   // });
+  app.get("/api/search/:str", function (req, res) {
+    var searchTerm = req.params.str;
+    console.log("search Term : "+searchTerm);
+    db.Tool.findAll({
+      where: {
+        name: {
+          [Op.startsWith]: searchTerm
+        }
+      }
+    }).then(function (dbTools) {
+      res.json(dbTools);
+    });
+  });
 
   // Create a new tool
   app.post("/api/tools", function(req, res) {

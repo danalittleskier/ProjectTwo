@@ -1,0 +1,31 @@
+<div class="tools-image2">
+    <div class="container">
+        {{#each tools}}
+        <div class="row">
+            <div class="col s12">
+                <div class="card blue darken-4">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{this.name}}</span>
+                        <p>Tool ID #{{this.id}}</p>
+                        <p><strong>Description </strong> {{this.description}}</p>
+                        <p><strong>Price: </strong> ${{this.price}}</p>
+                        {{#if tool.rented}}
+                        <button class="btn waves-effect waves-light gray darken-2">OUT
+                            <i class="material-icons right">build</i>
+                        </button>
+                        {{else}}
+                        <button class="btn waves-effect waves-light blue darken-2 rent" data-tool-id="{{this.id}}"
+                            data-owner-id="{{this.MemberId}}" data-tool-price="{{this.price}}">Rent
+                            <i class="material-icons right">build</i>
+                        </button>
+                        {{/if}}
+                    </div>
+                    <div class="card-action">
+                        <a class="white-text" href="/">← Back To Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
