@@ -10,7 +10,7 @@
     "start": "node server.js",
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
-    "test": "NODE_ENV=test mocha"
+    "test": "mocha"
   },
   "license": "ISC",
   "dependencies": {
