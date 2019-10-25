@@ -1,6 +1,8 @@
 /* eslint-disable camelcase */
 var $submitBtn = $("#post-tool");
 var $rentBtn = $(".rent");
+var $searchForm = $("#search-form");
+var $searchBtn = $("#search");
 //var $toolList = $("#tool-list");
 
 $(document).ready(function() {
@@ -52,6 +54,8 @@ var API = {
     return $.ajax({
       url: "search/" + searchTerm,
       type: "GET"
+    }).then(function() {
+      console.log(searchTerm);
     });
   },
   deleteTools: function(id) {
@@ -98,9 +102,9 @@ var handleFormSubmit = function(event) {
   $toolPrice.val(0);
 };
 
-var renderToolByCategory = function(event) {
-  var 
-})
+// var renderToolByCategory = function(event) {
+//   var
+// })
 
 var handleRentSubmit = function(event) {
   event.preventDefault();
@@ -123,14 +127,17 @@ var handleRentSubmit = function(event) {
 };
 
 // eslint-disable-next-line no-unused-vars
-function triggerSearch(text) {
+var triggerSearch = function(event) {
   event.preventDefault();
+  // eslint-disable-next-line prettier/prettier
+  var text = $("#search").val().trim();
 
   API.searchTool(text).then(function() {
     //refreshExamples();
   });
-}
+};
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $rentBtn.on("click", handleRentSubmit);
+$("#search-form").on("submit", triggerSearch);

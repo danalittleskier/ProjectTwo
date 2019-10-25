@@ -60,7 +60,6 @@ module.exports = function (app) {
       res.render("results", {
         tools: dbTools
       });
-      //res.json(dbTools);
     });
   });
   // Load tool page and pass in an tool by id
