@@ -47,6 +47,15 @@ module.exports = function (app) {
     // });
   });
 
+  app.get("/adminhome", isAuthenticated, function(req, res) {
+    db.Transaction.findAll({where: {}, include: [db.Member]})
+      .then(function(dbTrans) {
+        res.render("adminhome", {
+          transactions: dbTrans
+        });
+      });
+  });
+
   app.get("/search/:str", function (req, res) {
     var searchTerm = req.params.str;
     console.log("search Term : "+searchTerm);

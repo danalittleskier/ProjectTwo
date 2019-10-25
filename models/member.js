@@ -16,5 +16,11 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
+  Member.associate = function(models) {
+    Member.hasMany(models.Transaction, {
+      onDelete: "cascade"
+    });
+  };
+
   return Member;
 };
