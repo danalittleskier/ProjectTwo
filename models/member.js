@@ -5,8 +5,9 @@ module.exports = function(sequelize, DataTypes) {
     // eslint-disable-next-line camelcase
     last_name: DataTypes.STRING,
     // eslint-disable-next-line camelcase
-    address: DataTypes.STRING,
-    username: DataTypes.STRING
+    zip: DataTypes.INTEGER,
+    username: DataTypes.STRING,
+    email: DataTypes.STRING
   });
 
   Member.associate = function(models) {

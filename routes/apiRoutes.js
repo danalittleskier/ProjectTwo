@@ -1,5 +1,6 @@
 var db = require("../models");
 var passport = require("../config/passport");
+var Op = db.Sequelize.Op;
 
 module.exports = function(app) {
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
@@ -10,11 +11,21 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
+    console.log(req.body);
     db.User.create({
       email: req.body.email,
       password: req.body.password
     })
       .then(function() {
+        db.Member.create({
+          // eslint-disable-next-line camelcase
+          first_name: req.body.firstName,
+          // eslint-disable-next-line camelcase
+          last_name: req.body.lastName,
+          zip: req.body.zip,
+          username: req.body.username,
+          email: req.body.email
+        });
         res.redirect("/members");
       })
       .catch(function(err) {
@@ -42,6 +53,7 @@ module.exports = function(app) {
     });
   });
 
+<<<<<<< HEAD
   // Get all tools where category matches a given value
   app.get("/api/tools/:cat", function(req, res) {
     var categoryInput = req.params.cat.replace(/\+/g, " ");
@@ -55,6 +67,28 @@ module.exports = function(app) {
       .catch(function(error) {
         console.log(error);
       });
+=======
+  //Get all tools where category matches a given value
+  // app.get("/api/categories/:category", function(req, res) {
+  //   db.Tool.findAll({
+  //     where: { category: req.params.category }
+  //   }).then(function(dbTool) {
+  //     res.json(dbTool);
+  //   });
+  // });
+  app.get("/api/search/:str", function (req, res) {
+    var searchTerm = req.params.str;
+    console.log("search Term : "+searchTerm);
+    db.Tool.findAll({
+      where: {
+        name: {
+          [Op.startsWith]: searchTerm
+        }
+      }
+    }).then(function (dbTools) {
+      res.json(dbTools);
+    });
+>>>>>>> cae482e346eb83bc0e3dcfce31d9482619a0b461
   });
 
   // Create a new tool
