@@ -26,13 +26,9 @@ module.exports = function (app) {
     // db.Tool.findAll({}).then(function(dbTools) {
     // });
   });
-
-<<<<<<< HEAD
+  //Renders tools category page seperate from index
   app.get("/tools/:cats", function(req, res) {
     var categoryInput = req.params.cats.replace(/\+/g, " ");
-=======
-  app.get("/categories/:cats", function (req, res) {
->>>>>>> cae482e346eb83bc0e3dcfce31d9482619a0b461
     db.Tool.findAll({
       where: {
         category: categoryInput
@@ -41,7 +37,7 @@ module.exports = function (app) {
       res.render("category", {
         tools: dbTools
       });
-      console.log(dbTools[1]);
+      console.log(dbTools);
     });
   });
 

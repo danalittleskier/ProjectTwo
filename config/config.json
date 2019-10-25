@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "shadyM4C",
-=======
-    "password": null,
->>>>>>> cae482e346eb83bc0e3dcfce31d9482619a0b461
     "database": "toolzDEV_db",
     "host": "localhost",
     "dialect": "mysql"

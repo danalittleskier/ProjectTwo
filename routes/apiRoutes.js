@@ -53,7 +53,6 @@ module.exports = function(app) {
     });
   });
 
-<<<<<<< HEAD
   // Get all tools where category matches a given value
   app.get("/api/tools/:cat", function(req, res) {
     var categoryInput = req.params.cat.replace(/\+/g, " ");
@@ -61,34 +60,11 @@ module.exports = function(app) {
       where: { category: categoryInput }
     })
       .then(function(dbTool) {
-        console.log("dbTool: ", dbTool);
         res.json(dbTool.Tool);
       })
       .catch(function(error) {
         console.log(error);
       });
-=======
-  //Get all tools where category matches a given value
-  // app.get("/api/categories/:category", function(req, res) {
-  //   db.Tool.findAll({
-  //     where: { category: req.params.category }
-  //   }).then(function(dbTool) {
-  //     res.json(dbTool);
-  //   });
-  // });
-  app.get("/api/search/:str", function (req, res) {
-    var searchTerm = req.params.str;
-    console.log("search Term : "+searchTerm);
-    db.Tool.findAll({
-      where: {
-        name: {
-          [Op.startsWith]: searchTerm
-        }
-      }
-    }).then(function (dbTools) {
-      res.json(dbTools);
-    });
->>>>>>> cae482e346eb83bc0e3dcfce31d9482619a0b461
   });
 
   // Create a new tool

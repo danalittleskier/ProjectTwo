@@ -1,31 +1,37 @@
 {{!-- import nav from index --}}
 <nav class="z-depth-0" id="navbar">
-  <div class="nav-wrapper blue darken-4">
+  <div class="nav-wrapper grey darken-3">
     <a href="#!" class="brand-logo center" id="brand">Toolz</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="products.html">Rent</a></li>
-      <li><a href="/login" data-target="login" class="btn modal-trigger">Login</a></li>
-
+      <li><a href="/login" data-target="login"
+          class="btn waves-effect waves-light grey darken-2">Login</a></li>
     </ul>
+    <form class="hide-on-med-and-down" id="form1">
+      <div class="input-field" style="max-width: 400pt;">
+        <input id="search" type="search" required onkeyup="triggerSearch(this.value);">
+        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+        <i class="material-icons">close</i>
+      </div>
+    </form>
   </div>
 </nav>
 
 {{!-- Materialize Card format to generate card for each tool passed through the above for loop --}}
     <div class="container">
         <div class="row">
-            {{#each tool}}
-                <div class="card col">
+            {{#each tools}}
+                <div id = "{{this.name}}"class="card col s3 m5">
                     <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="../public/images/ego-cordless-chainsaws-cs1804-4f_1000.jpg">
+                    <img class="activator" src="https://www.liveabout.com/thmb/TtQaZZZ1Gz10KnD15npibzxc8zY=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/Tool-Band-Picture-56a7ffb95f9b58b7d0eff5b9.jpeg">
                     </div>
                     <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">18 in. 56-Volt Lithium-ion Cordless Electric Chainsaw Kit with New 5.0 Ah Battery, 210-Watt charger<i class="material-icons right">more_vert</i></span>
+                    <span class="card-title activator grey-text text-darken-4">{{this.name}}<i class="material-icons right">more_vert</i></span>
                     <p><a href="#">Home Depot Link. Get for Less</a></p>
                     </div>
                     <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">{{tool.name}}{{tool.category}}{{tool.price}}<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    <span class="card-title grey-text text-darken-4">{{this.price}}<i class="material-icons right">close</i></span>
+                    <p>{{this.description}}.</p>
                     </div>
                 </div>
             {{/each}}  

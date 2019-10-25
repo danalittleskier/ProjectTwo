@@ -98,6 +98,10 @@ var handleFormSubmit = function(event) {
   $toolPrice.val(0);
 };
 
+var renderToolByCategory = function(event) {
+  var 
+})
+
 var handleRentSubmit = function(event) {
   event.preventDefault();
 
