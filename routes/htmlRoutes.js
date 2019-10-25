@@ -57,7 +57,8 @@ module.exports = function (app) {
   });
 
   app.get("/search/:str", function (req, res) {
-    var searchTerm = req.params.str;
+    //var searchTerm = req.params.str;
+    var searchTerm = req.params.str.replace(/\+/g, " ");
     console.log("search Term : "+searchTerm);
     db.Tool.findAll({
       where: {

@@ -56,6 +56,7 @@ var API = {
       type: "GET"
     }).then(function() {
       console.log(searchTerm);
+      location.replace("/search/" + searchTerm);
     });
   },
   deleteTools: function(id) {

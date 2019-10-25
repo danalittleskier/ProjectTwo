@@ -38,10 +38,9 @@ module.exports = function(app) {
     db.Admin.create({
       email: req.body.email,
       password: req.body.password
-    })
-      .catch(function(err) {
-        res.status(401).json(err);
-      });
+    }).catch(function(err) {
+      res.status(401).json(err);
+    });
   });
 
   app.post("/api/admin", adminPassport.authenticate("local"), function(req,res) {
@@ -90,8 +89,7 @@ module.exports = function(app) {
   });
 
   //Insert into Transactions table
-  app.post("/api/rent", function(req, res) {
-    console.log(req.body);
+  app.post(/\/api\/rent/, function(req, res) {
     db.Tool.update(
       {
         rented: true

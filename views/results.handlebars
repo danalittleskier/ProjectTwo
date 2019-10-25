@@ -1,15 +1,17 @@
+<link rel="stylesheet" type="text/css" href="styles/styles.css">
 <nav class="z-depth-0" id="navbar">
   <div class="nav-wrapper grey darken-3">
-    <a href="#!" class="brand-logo center" id="brand">Toolz</a>
+    <a href="/" class="brand-logo center" id="brand">Toolz</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li><a href="/login" data-target="login"
           class="btn waves-effect waves-light grey darken-2">Login</a></li>
     </ul>
-    <form class="hide-on-med-and-down" id="form1">
+    <form class="hide-on-med-and-down" id="search-form" action="/search/chain">
       <div class="input-field" style="max-width: 400pt;">
-        <input id="search" type="search" required onkeyup="getTools(this.value,0);">
+        <input id="search" type="search" required >
         <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+        {{!-- <button type="submit">Search</button> --}}
         <i class="material-icons">close</i>
       </div>
     </form>
@@ -30,7 +32,7 @@
                         <p>Tool ID #{{this.id}}</p>
                         <p><strong>Description </strong> {{this.description}}</p>
                         <p><strong>Price: </strong> ${{this.price}}</p>
-                        {{#if tool.rented}}
+                        {{#if this.rented}}
                         <button class="btn waves-effect waves-light gray darken-1">OUT
                             <i class="material-icons right">build</i>
                         </button>
@@ -50,3 +52,9 @@
         {{/each}}
     </div>
 </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+{{!-- <script src="/js/index.js"></script> --}}
+<script src="/js/tool.js"></script>
