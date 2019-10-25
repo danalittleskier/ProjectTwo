@@ -26,22 +26,18 @@ module.exports = function (app) {
     // db.Tool.findAll({}).then(function(dbTools) {
     // });
   });
-
-  app.get("/admin", function(req, res) {
-    res.render("admin");
-    // db.Tool.findAll({}).then(function(dbTools) {
-    // });
-  });
-
-  app.get("/categories/:cats", function (req, res) {
+  //Renders tools category page seperate from index
+  app.get("/tools/:cats", function(req, res) {
+    var categoryInput = req.params.cats.replace(/\+/g, " ");
     db.Tool.findAll({
       where: {
-        category: req.params.cats
+        category: categoryInput
       }
     }).then(function (dbTools) {
       res.render("category", {
         tools: dbTools
       });
+      console.log(dbTools);
     });
   });
 
@@ -73,7 +69,6 @@ module.exports = function (app) {
       res.render("results", {
         tools: dbTools
       });
-      //res.json(dbTools);
     });
   });
   // Load tool page and pass in an tool by id

@@ -1,15 +1,16 @@
+{{! Nav Bar}}
 <nav class="z-depth-0" id="navbar">
   <div class="nav-wrapper grey darken-3">
     <a href="#!" class="brand-logo center" id="brand">Toolz</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="/login" data-target="login"
-          class="btn waves-effect waves-light grey darken-2">Login</a></li>
+      <li><a href="/login" data-target="login" class="btn waves-effect waves-light grey darken-2">Login</a></li>
     </ul>
-    <form class="hide-on-med-and-down" id="form1">
+    <form class="hide-on-med-and-down" id="search-form" >
       <div class="input-field" style="max-width: 400pt;">
-        <input id="search" type="search" required onkeyup="triggerSearch(this.value);">
+        <input id="search" type="search" required >
         <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+        <button type="submit">Search</button>
         <i class="material-icons">close</i>
       </div>
     </form>
@@ -20,13 +21,78 @@
   <li><a href="/login" data-target="login">Login</a></li>
 </ul>
 
+{{!-- Top of landing Page --}}
+
 <div class="tools-image">
   <div class="valign-wrapper row">
     <div class="col s12 center-align">
       <h3 class="callout">Share tools. Rent tools. Get stuff done.</h3>
     </div>
   </div>
+  {{! Row container for power tools cards, linking to individual routes within each page}}
+
+  <div class="container row center-align">
+    <div class="row">
+      <div class="center-cards">
+        {{! Garden tools}}
+
+        <div class="card col s3 lead-card">
+          {{!-- <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="https://dam.generac.com/ImConvServlet/imconv/ff179013d6047a16d5ceb3e23ceaef31973e4e46/440Wx440H?assetDescr=30081_0">
+        </div> --}}
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Garden Tools<i
+                class="material-icons right">more_vert</i></span>
+            <p><a href="Tools/Garden+Tools">View All</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Garden Tools<i
+                class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+
+        {{! Power Tools}}
+
+        <div class="card col s3 lead-card">
+          {{!-- <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="images/office.jpg">
+        </div> --}}
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Power Tools<i
+                class="material-icons right">more_vert</i></span>
+            <p><a href="tools/Power+Tools">View All</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Plug it in, make loud noises, don't get hurt</p>
+          </div>
+        </div>
+
+        {{!Hand Tools}}
+
+        <div class="card col s3 lead-card">
+          {{!-- <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="images/office.jpg">
+        </div> --}}
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Hand Tools<i
+                class="material-icons right">more_vert</i></span>
+            <p><a href="tools/Hand+Tools">View All</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Chisels, Hammers, Screwdrivers, OH MY!! Life before electricity</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+</div>
+
+{{! Offer a tool / about section of web page}}
+
 <div id="offer">
   <div class="container">
 
@@ -84,6 +150,8 @@
   </div>
 </div>
 
+{{! Current tools div}}
+
 <div class="tools-image2">
   <div class="container">
     <div class="row">
@@ -124,5 +192,5 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="/js/index.js"></script>
+{{!-- <script src="/js/index.js"></script> --}}
 <script src="/js/tool.js"></script>
