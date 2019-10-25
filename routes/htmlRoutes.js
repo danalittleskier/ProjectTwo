@@ -27,6 +27,12 @@ module.exports = function (app) {
     // });
   });
 
+  app.get("/admin", function(req, res) {
+    res.render("admin");
+    // db.Tool.findAll({}).then(function(dbTools) {
+    // });
+  });
+
   app.get("/categories/:cats", function (req, res) {
     db.Tool.findAll({
       where: {
@@ -43,6 +49,15 @@ module.exports = function (app) {
     res.render("members");
     // db.Tool.findAll({}).then(function(dbTools) {
     // });
+  });
+
+  app.get("/adminhome", isAuthenticated, function(req, res) {
+    db.Transaction.findAll({where: {}, include: [db.Member]})
+      .then(function(dbTrans) {
+        res.render("adminhome", {
+          transactions: dbTrans
+        });
+      });
   });
 
   app.get("/search/:str", function (req, res) {
