@@ -26,15 +26,17 @@ module.exports = function(app) {
     // });
   });
 
-  app.get("/categories/:cats", function(req, res) {
+  app.get("/tools/:cats", function(req, res) {
+    var categoryInput = req.params.cats.replace(/\+/g, " ");
     db.Tool.findAll({
       where: {
-        category: req.params.cats
+        category: categoryInput
       }
     }).then(function(dbTools) {
       res.render("category", {
         tools: dbTools
       });
+      console.log(dbTools[1]);
     });
   });
 

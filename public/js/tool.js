@@ -28,7 +28,7 @@ var API = {
     });
   },
   getToolsByCategory: function(tools) {
-    return $.ajaz({
+    return $.ajax({
       type: "GET",
       url: "api/tools" + category
     }).then(function() {
