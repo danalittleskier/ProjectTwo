@@ -27,6 +27,14 @@ var API = {
       type: "GET"
     });
   },
+  getToolsByCategory: function(tools) {
+    return $.ajax({
+      type: "GET",
+      url: "api/tools" + category
+    }).then(function() {
+      console.log(tools);
+    });
+  },
   rentTool: function(transaction) {
     return $.ajax({
       headers: {
@@ -89,6 +97,10 @@ var handleFormSubmit = function(event) {
   $toolCategory.val("");
   $toolPrice.val(0);
 };
+
+var renderToolByCategory = function(event) {
+  var 
+})
 
 var handleRentSubmit = function(event) {
   event.preventDefault();
