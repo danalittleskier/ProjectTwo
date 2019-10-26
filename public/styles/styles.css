@@ -95,17 +95,12 @@ img {
 }
 
 .lead-card {
-<<<<<<< HEAD
-  opacity: .6;
-  margin: 15rem 2rem 0 2rem;
-=======
   /* opacity: .8; */
   margin-top: 2rem;
 }
 
 .bump {
   margin-top: 200px;
->>>>>>> 7809d10b43e66efa4185c332b9d7a4137583f748
 }
 
 .rent-text {
