@@ -52,6 +52,15 @@ img {
   position: relative;
 }
 
+.tools-image3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/tools-image1.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
 .tool-card {
   padding-left: 20px;
 }
@@ -75,6 +84,7 @@ img {
 .callout {
   color: white;
   font-family: 'Carter One', cursive;
+  margin-top: 25%;
 }
 
 .tool-submit {
@@ -86,9 +96,14 @@ img {
 }
 
 .lead-card {
-  opacity: .6;
-  margin: 30rem 2rem 0 2rem;
+  /* opacity: .8; */
+  margin-top: 2rem;
 }
+
+.bump {
+  margin-top: 200px;
+}
+
 .rent-text {
   padding-right: 40px;
   color: #424242;
@@ -98,12 +113,12 @@ img {
   font-family: 'Carter One', cursive;
 } 
 
-a, p {
+a, p, span {
   font-family: 'Spectral', serif;
 }
 
 #offer {
-  padding-bottom: 65px;
+  padding: 65px 0;
 }
 
 .center-me {
