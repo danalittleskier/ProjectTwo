@@ -1,25 +1,37 @@
 ## TOOLZ
 
-# Toolz : The last tool sharing app you will ever use
+# The last tool sharing app you will ever use
 
-Have a garage full of toolz collecting dust? Have a yard full of downed trees and no chainsaw? Never fear, toolz is here. Founded in October of 2019, toolz is changing the way you complete home improvement tasks and 
+* Have a garage full of toolz collecting dust? Have a yard full of downed trees and no chainsaw? 
+* Never fear, toolz is here. Founded in October of 2019, toolz is changing the way you complete home improvement tasks and 
 use your tools.
 
-# Motivation
+## Overview
 
-Far too many toolz around the house go unused. How often do you use the tilesaw you bought to redo the bathroom five years ago? Toolz helps you complete tasks around the house and build a community around shared knowledge and tools.
+* The app allows a user to login and create tools for sharing, view a list of the tool marketplace, update tools they previously created, and delete tools they no longer have available for sharing. 
+* Brings together Tool Users with tool owners. Helps get projects done faster. Insurance not included.
 
-# Results
+## Technologies
 
-The result of our app allows a user login to create tools for sharing, view a list of the tool marketplace, update tools they previously created, and delete tools they no longer have available for sharing. Our app brings together Tool Users with tool owners. Helps get projects done faster. Insurance not included.
+* Javascript
+* Node.js
+* Express
+* Materialize
+* Handlebars
 
-# Team Efforts
 
-As a group, the team added SERIOUS personality to toolz. The concept, UI, and corny jokes throughout were a serious team effort.
+## Toolz App Contributors
 
-# Individual Efforts
+* [Trevor Brown](https://github.com/tr3vbr0w) - front-end css, category routes
+* [Tyler Ford](https://github.com/tylermorrisford) - front-end, layout, design, hadlebars
+* [Dana Alexandrescu](https://github.com/danalittleskier) - back-end, travis ci, models, search routes
+* [Guillermo Villalta](https://github.com/mexcelus) - back-end, login, models, authentication routes
 
-# How to run --> Step By Step
+### GitHub Link
+
+https://github.com/danalittleskier/ProjectTwo
+
+
 
 
 

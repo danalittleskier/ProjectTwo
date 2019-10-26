@@ -5,6 +5,7 @@ var exphbs = require("express-handlebars");
 
 var db = require("./models");
 var passport = require("./config/passport");
+var adminPassport = require("./config/adminPassport")
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -19,6 +20,9 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(adminPassport.initialize());
+app.use(adminPassport.session());
 // Handlebars
 app.engine(
   "handlebars",
@@ -30,6 +34,7 @@ app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/apiRoutes")(app);
+require("./routes/apiAdmin")(app);
 require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };

@@ -33,7 +33,6 @@ img {
   height: auto;
 }
 
-
 .tools-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/tools-image1.jpg");
   height: 70%;
@@ -45,6 +44,15 @@ img {
 
 .tools-image2 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/tools-image2.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.tools-image3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/tools-image1.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -75,6 +83,7 @@ img {
 .callout {
   color: white;
   font-family: 'Carter One', cursive;
+  margin-top: 25%;
 }
 
 .tool-submit {
@@ -86,30 +95,39 @@ img {
 }
 
 .lead-card {
+<<<<<<< HEAD
   opacity: .6;
   margin: 15rem 2rem 0 2rem;
+=======
+  /* opacity: .8; */
+  margin-top: 2rem;
 }
+
+.bump {
+  margin-top: 200px;
+>>>>>>> 7809d10b43e66efa4185c332b9d7a4137583f748
+}
+
 .rent-text {
   padding-right: 40px;
   color: #424242;
 }
 
-.brand-logo, h1, h2, h3, h4 {
+.brand-logo, h1, h2, h3, h4, #brand {
   font-family: 'Carter One', cursive;
 } 
 
-a, p {
+a, p, span {
   font-family: 'Spectral', serif;
 }
 
 #offer {
-  padding-bottom: 65px;
+  padding: 65px 0;
 }
 
 .center-me {
   padding-left: 12%;
 }
-
 
     /* Inactive/Active Default input field color */
     .input-field input[type]:not([readonly]),
@@ -169,4 +187,3 @@ a, p {
       -webkit-box-shadow: 0 1px 0 0 #728F7A;
               box-shadow: 0 1px 0 0 #728F7A;
     }
-    

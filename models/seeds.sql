@@ -10,7 +10,7 @@ INSERT INTO members (first_name, last_name , address, username, createdAt, updat
 VALUES ("Jim", "Builder", "1 Victory St", "jimbuilder", now(), now());
 
 INSERT INTO tools (name, description, category, price, rented, renter, createdAt, updatedAt, MemberId)
-VALUES ("Chainsaw", "A cool description", "Power Tools", 25.00, true, null,now(), now(), 1);
+VALUES ("Chainsaw", "A cool description", "Power Tools", 25.00, true, null, now(), now(), 1);
 
 INSERT INTO tools (name, description, category, price, rented, renter, createdAt, updatedAt, MemberId)
 VALUES ("Belt Sander", "A device larger than most sanders out there", "Power Tools", 25.00, false, null, now(), now(), 1);
