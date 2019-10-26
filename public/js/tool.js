@@ -113,10 +113,14 @@ var handleRentSubmit = function(event) {
   var $rentToolId = $(this)[0].dataset.toolId;
   var $rentOwnerId = $(this)[0].dataset.ownerId;
   var $rentPrice = $(this)[0].dataset.toolPrice;
+  var $renterId = localStorage.getItem("email");
+  if ($renterId === "") {
+    $renterId = "guest@email.com";
+  }
 
   var transaction = {
     tool_id: $rentToolId,
-    renter_id: 2,
+    renter_id: $renterId,
     owner_id: $rentOwnerId,
     price: $rentPrice
   };
