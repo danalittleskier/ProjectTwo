@@ -8,7 +8,7 @@
     </ul>
     <form class="hide-on-med-and-down" id="search-form" action="/search/chain">
       <div class="input-field" style="max-width: 400pt;">
-        <input id="search" type="search" required >
+        <input id="search" type="search" required>
         <label class="label-icon" for="search"><i class="material-icons">search</i></label>
         {{!-- <button type="submit">Search</button> --}}
         <i class="material-icons">close</i>
@@ -24,78 +24,22 @@
 {{!-- Top of landing Page --}}
 
 <div class="tools-image">
-  <div class="valign-wrapper row">
-    <div class="col s12 center-align">
-      <h3 class="callout">Share tools. Rent tools. Get stuff done.</h3>
-    </div>
-  </div>
-  {{! Row container for power tools cards, linking to individual routes within each page}}
-
-  <div class="container row center-align">
-    <div class="row">
-      <div class="center-cards">
-        {{! Garden tools}}
-
-        <div class="card col s3 lead-card">
-          {{!-- <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="https://dam.generac.com/ImConvServlet/imconv/ff179013d6047a16d5ceb3e23ceaef31973e4e46/440Wx440H?assetDescr=30081_0">
-        </div> --}}
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Garden Tools<i
-                class="material-icons right">more_vert</i></span>
-            <p><a href="Tools/Garden+Tools">View All</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Garden Tools<i
-                class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
-          </div>
-        </div>
-
-        {{! Power Tools}}
-
-        <div class="card col s3 lead-card">
-          {{!-- <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="images/office.jpg">
-        </div> --}}
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Power Tools<i
-                class="material-icons right">more_vert</i></span>
-            <p><a href="tools/Power+Tools">View All</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-            <p>Plug it in, make loud noises, don't get hurt</p>
-          </div>
-        </div>
-
-        {{!Hand Tools}}
-
-        <div class="card col s3 lead-card">
-          {{!-- <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="images/office.jpg">
-        </div> --}}
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Hand Tools<i
-                class="material-icons right">more_vert</i></span>
-            <p><a href="tools/Hand+Tools">View All</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-            <p>Chisels, Hammers, Screwdrivers, OH MY!! Life before electricity</p>
-          </div>
-        </div>
+  <div class="container">
+    <div class="row valign-wrapper">
+      <div class="col s12 center-align">
+        <h3 class="callout">Share tools. Rent tools. Get stuff done.</h3>
       </div>
     </div>
+    {{! Row container for power tools cards, linking to individual routes within each page}}
+
+
   </div>
-</div>
 </div>
 
 {{! Offer a tool / about section of web page}}
 
 <div id="offer">
   <div class="container">
-
     <div class="row">
       <div class="col s12 m6">
         <h3 class="heading-text rent-text">Offer your tools for rent</h3>
@@ -156,41 +100,78 @@
   <div class="container">
     <div class="row">
       <div class="col s12">
-        <h3 class="heading-text-white">Current Tools</h3>
+        <h3 class="heading-text-white bump">Browse Tools by Category</h3>
       </div>
     </div>
     <div class="row">
-      {{#each tools}}
-      <div class="col s12 m4">
-        <div class="card grey darken-2">
-          <div class="card-content white-text">
-            <span class="card-title">{{this.name}} </span> <span>Owner {{this.MemberId}}</span>
-            <p>{{this.description}}</p>
-            <p>${{this.price}}</p>
+      <div class="center-cards">
+        {{! Garden tools}}
+
+        <div class="card col s3 lead-card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="images/garden.png">
           </div>
-          <div class="card-action">
-            <a href="tools/{{this.id}}" style="color: #728F7A;">More info</a>
-            {{!-- <a href="">Rent</a> --}}
-            {{#if this.rented}}
-            <button class="btn waves-effect waves-light grey darken-1">OUT
-              <i class="material-icons right">build</i>
-            </button>
-            {{else}}
-            <button class="btn waves-effect waves-light grey darken-3 rent" data-tool-id="{{this.id}}"
-              data-owner-id="{{this.MemberId}}" data-tool-price="{{this.price}}">Rent
-              <i class="material-icons right">build</i>
-            </button>
-            {{/if}}
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Garden Tools<i
+                class="material-icons right">more_vert</i></span>
+            <p><a href="Tools/Garden+Tools">View All</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Garden Tools<i
+                class="material-icons right">close</i></span>
+            <p>Get your lawn looking way better than your neighbor's lawn!</p>
+          </div>
+        </div>
+
+        {{! Power Tools}}
+
+        <div class="card col s3 lead-card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="images/drill.png">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Power Tools<i
+                class="material-icons right">more_vert</i></span>
+            <p><a href="tools/Power+Tools">View All</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Power Tools<i class="material-icons right">close</i></span>
+            <p>Plug it in, make loud noises, don't get hurt</p>
+          </div>
+        </div>
+
+        {{!Hand Tools}}
+
+        <div class="card col s3 lead-card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="images/hand.png">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Hand Tools<i
+                class="material-icons right">more_vert</i></span>
+            <p><a href="tools/Hand+Tools">View All</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Hand Tools<i class="material-icons right">close</i></span>
+            <p>Chisels, Hammers, Screwdrivers, OH MY!! Life before electricity</p>
           </div>
         </div>
       </div>
-      {{/each}}
     </div>
+
   </div>
 </div>
+
+<footer class="page-footer grey darken-3">
+  <div class="footer-copyright">
+    <div class="container">
+      © 2019 Copyright Toolz
+      <a class="white-text text-lighten-4 right" href="https://github.com/danalittleskier/ProjectTwo">Toolz Repo</a>
+    </div>
+  </div>
+</footer>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-{{!-- <script src="/js/index.js"></script> --}}
 <script src="/js/tool.js"></script>
