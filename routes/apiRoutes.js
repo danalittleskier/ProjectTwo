@@ -1,9 +1,9 @@
 var db = require("../models");
-var passport = require("../config/passport");
-var adminPassport = require("../config/adminPassport");
+//var adminPassport = require("../config/adminPassport");
 var Op = db.Sequelize.Op;
 
 module.exports = function(app) {
+  var passport = require("../config/passport");
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json(req.user);
   });
@@ -41,10 +41,6 @@ module.exports = function(app) {
     }).catch(function(err) {
       res.status(401).json(err);
     });
-  });
-
-  app.post("/api/admin", adminPassport.authenticate("local"), function(req,res) {
-    res.json(req.user);
   });
 
   app.get("/api/user_data", function(req, res) {
