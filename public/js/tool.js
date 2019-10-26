@@ -114,7 +114,9 @@ var handleRentSubmit = function(event) {
   var $rentOwnerId = $(this)[0].dataset.ownerId;
   var $rentPrice = $(this)[0].dataset.toolPrice;
   var $renterId = localStorage.getItem("email");
-  if ($renterId === "") {
+
+  //Check for user email if not add guest email
+  if ($renterId === null || $renterId === "") {
     $renterId = "guest@email.com";
   }
 
