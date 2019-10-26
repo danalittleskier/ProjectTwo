@@ -33,7 +33,6 @@ img {
   height: auto;
 }
 
-
 .tools-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/tools-image1.jpg");
   height: 70%;
@@ -125,7 +124,6 @@ a, p, span {
   padding-left: 12%;
 }
 
-
     /* Inactive/Active Default input field color */
     .input-field input[type]:not([readonly]),
     .input-field input[type]:focus:not([readonly]),
@@ -184,4 +182,3 @@ a, p, span {
       -webkit-box-shadow: 0 1px 0 0 #728F7A;
               box-shadow: 0 1px 0 0 #728F7A;
     }
-    
