@@ -41,7 +41,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/members", function (req, res) {
+  app.get("/members", isAuthenticated, function (req, res) {
     res.render("members");
     // db.Tool.findAll({}).then(function(dbTools) {
     // });
