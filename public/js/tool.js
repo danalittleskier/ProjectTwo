@@ -74,12 +74,14 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var $toolName = $("#tool-name");
+  var $toolImage = $("#tool-image");
   var $toolDescription = $("#tool-description");
   var $toolCategory = $("#tool-category");
   var $toolPrice = $("#tool-price");
 
   var tool = {
     name: $toolName.val().trim(),
+    image: $toolImage.val().trim(),
     description: $toolDescription.val().trim(),
     category: $toolCategory.val().trim(),
     price: $toolPrice.val().trim(),
@@ -98,6 +100,7 @@ var handleFormSubmit = function(event) {
   });
 
   $toolName.val("");
+  $toolImage.val("");
   $toolDescription.val("");
   $toolCategory.val("");
   $toolPrice.val(0);
