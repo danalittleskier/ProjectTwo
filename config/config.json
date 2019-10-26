@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "password1234",
     "database": "toolzDEV_db",
     "host": "localhost",
     "dialect": "mysql"
