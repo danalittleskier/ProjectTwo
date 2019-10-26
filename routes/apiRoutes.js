@@ -69,7 +69,7 @@ module.exports = function(app) {
   });
 
   // Get all tools where category matches a given value
-  app.get("/api/tools/:cat", function(req, res) {
+  app.get("/api/categories/:cat", function(req, res) {
     var categoryInput = req.params.cat.replace(/\+/g, " ");
     db.Tool.findAll({
       where: { category: categoryInput }

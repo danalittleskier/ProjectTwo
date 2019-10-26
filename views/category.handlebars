@@ -10,24 +10,24 @@
 </head>
 
 <body>
-<nav class="z-depth-0" id="navbar">
-  <div class="nav-wrapper grey darken-3">
-    <a href="/" class="brand-logo center" id="brand">Toolz</a>
-    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="/login" data-target="login"
-          class="btn waves-effect waves-light grey darken-2">Login</a></li>
-    </ul>
-    <form class="hide-on-med-and-down" id="search-form" action="/search/chain">
-      <div class="input-field" style="max-width: 400pt;">
-        <input id="search" type="search" required>
-        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-        {{!-- <button type="submit">Search</button> --}}
-        <i class="material-icons">close</i>
-      </div>
-    </form>
-  </div>
-</nav>
+  <nav class="z-depth-0" id="navbar">
+    <div class="nav-wrapper grey darken-3">
+      <a href="/" class="brand-logo center" id="brand">Toolz</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/login" data-target="login"
+            class="btn waves-effect waves-light grey darken-2">Login</a></li>
+      </ul>
+      <form class="hide-on-med-and-down" id="search-form" action="/search/chain">
+        <div class="input-field" style="max-width: 400pt;">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          {{!-- <button type="submit">Search</button> --}}
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
 
 {{!-- Materialize Card format to generate card for each tool passed through the above for loop --}}
     <div class="tools-image2">
@@ -36,7 +36,7 @@
             {{#each tools}}
                 <div id = "{{this.name}}"class="card col s3 m5">
                     <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="{{this.image}}">
+                    <img class="activator" height="250px" width="250px" src="{{this.image}}">
                     </div>
                     <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">{{this.name}}<i class="material-icons right">more_vert</i></span>

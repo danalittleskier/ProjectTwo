@@ -27,7 +27,7 @@ module.exports = function (app) {
     // });
   });
   //Renders tools category page seperate from index
-  app.get("/tools/:cats", function(req, res) {
+  app.get("/categories/:cats", function(req, res) {
     var categoryInput = req.params.cats.replace(/\+/g, " ");
     db.Tool.findAll({
       where: {
