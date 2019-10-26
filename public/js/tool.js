@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 var $submitBtn = $("#post-tool");
-var $rentBtn = $(".rent");
+var $rentBtn = $("#rent");
 var $searchForm = $("#search-form");
 var $searchBtn = $("#search");
 //var $toolList = $("#tool-list");
