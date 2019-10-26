@@ -1,6 +1,6 @@
-var db = require("../models");
 var passport = require("../config/passport");
-var adminPassport = require("../config/adminPassport");
+var db = require("../models");
+//var adminPassport = require("../config/adminPassport");
 var Op = db.Sequelize.Op;
 
 module.exports = function(app) {
@@ -43,10 +43,6 @@ module.exports = function(app) {
     });
   });
 
-  app.post("/api/admin", adminPassport.authenticate("local"), function(req,res) {
-    res.json(req.user);
-  });
-
   app.get("/api/user_data", function(req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
@@ -54,9 +50,14 @@ module.exports = function(app) {
     } else {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
-      res.json({
-        email: req.user.email,
-        id: req.user.id
+      db.Member.findAll({ where: { id: req.user.id } }).then(function(
+        dbMember
+      ) {
+        res.json({
+          email: req.user.email,
+          id: req.user.id,
+          member: dbMember[0]
+        });
       });
     }
   });

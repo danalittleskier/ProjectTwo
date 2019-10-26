@@ -1,18 +1,19 @@
-var adminPassport = require("passport");
-var LocalStrategy = require("passport-local").Strategy;
+var Passport = require("passport").Passport;
+var LocalAdminStrategy = require("passport-local").Strategy;
+var adminPassport = new Passport();
 
-var db = require("../models");
+var admindb = require("../models");
 
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
 adminPassport.use(
-  new LocalStrategy(
+  new LocalAdminStrategy(
     // Our user will sign in using an email, rather than a "username"
     {
       usernameField: "email"
     },
     function(email, password, done) {
       // When a user tries to sign in this code runs
-      db.Admin.findOne({
+      admindb.Admin.findOne({
         where: {
           email: email
         }
