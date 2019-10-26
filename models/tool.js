@@ -9,7 +9,8 @@ module.exports = function(sequelize, DataTypes) {
     // eslint-disable-next-line prettier/prettier
     price: DataTypes.DECIMAL(10, 2),
     rented: DataTypes.BOOLEAN,
-    renter: DataTypes.STRING
+    renter: DataTypes.STRING,
+    image: DataTypes.STRING
   });
 
   Tool.associate = function(models) {
