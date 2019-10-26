@@ -47,6 +47,12 @@ module.exports = function (app) {
     // });
   });
 
+  app.get("/admin", function(req, res) {
+    res.render("admin");
+    // db.Tool.findAll({}).then(function(dbTools) {
+    // });
+  });
+
   app.get("/adminhome", isAuthenticated, function(req, res) {
     db.Transaction.findAll({where: {}, include: [db.Member]})
       .then(function(dbTrans) {
