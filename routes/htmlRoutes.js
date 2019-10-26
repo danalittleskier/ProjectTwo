@@ -41,8 +41,14 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/members", isAuthenticated, function (req, res) {
+  app.get("/members", function (req, res) {
     res.render("members");
+    // db.Tool.findAll({}).then(function(dbTools) {
+    // });
+  });
+
+  app.get("/admin", function(req, res) {
+    res.render("admin");
     // db.Tool.findAll({}).then(function(dbTools) {
     // });
   });
