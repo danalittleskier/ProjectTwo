@@ -21,8 +21,8 @@ var API = {
       data: JSON.stringify(tool)
     }).then(function() {
       // Reload the page to get the updated list
-      location.reload();
-      //location.replace("/tools/" + tool.id);
+      //location.reload();
+      location.replace("/search/" + tool.name);
     });
   },
   getTools: function() {
