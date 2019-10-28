@@ -9,7 +9,12 @@ var $deleteBtn = $(".delete");
 $(document).ready(function() {
   $("select").formSelect();
 });
-
+$(document).ready(function() {
+  $("#modal-delete").modal();
+});
+$(document).ready(function() {
+  $("#modal-rent").modal();
+});
 var API = {
   saveTool: function(tool) {
     return $.ajax({
@@ -21,8 +26,8 @@ var API = {
       data: JSON.stringify(tool)
     }).then(function() {
       // Reload the page to get the updated list
-      location.reload();
-      //location.replace("/tools/" + tool.id);
+      //location.reload();
+      location.replace("/search/" + tool.name);
     });
   },
   getTools: function() {
@@ -49,7 +54,7 @@ var API = {
       data: JSON.stringify(transaction)
     }).then(function() {
       // Reload the page to get the updated list
-      location.reload();
+      //location.reload();
     });
   },
   searchTool: function(searchTerm) {
@@ -67,7 +72,7 @@ var API = {
       type: "DELETE"
     }).then(function() {
       // Reload the page to get the updated list
-      location.reload();
+      //location.reload();
     });
   }
 };
@@ -152,7 +157,7 @@ var triggerSearch = function(event) {
 var handleDeleteSubmit = function(event) {
   event.preventDefault();
   var $deleteToolId = $(this)[0].dataset.toolId;
-  console.log("The id" + $deleteToolId);
+  console.log("The id " + $deleteToolId);
   API.deleteTools($deleteToolId).then(function() {
     //refreshExamples();
   });

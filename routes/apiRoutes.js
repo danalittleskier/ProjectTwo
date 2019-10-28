@@ -108,7 +108,8 @@ module.exports = function(app) {
   });
 
   // Delete an example by id
-  app.delete("/search/api/tools/:id", function(req, res) {
+  app.delete("*/api/tools/:id", function(req, res) {
+    console.log("params " + req.params.id);
     db.Tool.destroy({ where: { id: req.params.id } }).then(function(dbTool) {
       res.json(dbTool);
     });
