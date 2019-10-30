@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>search results - Toolz</title>
+  <title>Search Results - Toolz</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Carter+One|Spectral&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
   <ul class="sidenav" id="mobile-demo">
     <li><a href="/login" data-target="login">Login</a></li>
   </ul>
-  <div class="tools-image2">
+  <div class="tools-image3">
     <div class="container">
       {{#each tools}}
       <div class="row">
@@ -49,8 +49,8 @@
                 <i class="material-icons right">build</i>
               </button>
               {{else}}
-              <button data-target="modal-rent" class="btn waves-effect waves-light blue darken-3 modal-trigger rent" data-tool-id="{{this.id}}"
-                data-owner-id="{{this.MemberId}}" data-tool-price="{{this.price}}">Rent
+              <button data-target="modal-rent" class="btn waves-effect waves-light blue darken-3 modal-trigger rent"
+                data-tool-id="{{this.id}}" data-owner-id="{{this.MemberId}}" data-tool-price="{{this.price}}">Rent
                 <i class="material-icons right">build</i>
               </button>
               {{/if}}
@@ -65,27 +65,27 @@
           </div>
         </div>
         <!-- Modal Structure -->
-      <div id="modal-delete" class="modal">
-        <div class="modal-content">
-          <h4>Delete Tool</h4>
-          <p>You deleted -- {{this.name}}</p>
+        <div id="modal-delete" class="modal">
+          <div class="modal-content">
+            <h4>Delete Tool</h4>
+            <p>You deleted -- {{this.name}}</p>
+          </div>
+          <div class="modal-footer">
+            <a href="/" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
         </div>
-        <div class="modal-footer">
-          <a href="/" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-        </div>
-      </div>
 
-       <!-- Rent Modal Structure -->
-      <div id="modal-rent" class="modal">
-        <div class="modal-content">
-          <h4>Rent Tool</h4>
-          <p>You Rented -- {{this.name}}</p>
+        <!-- Rent Modal Structure -->
+        <div id="modal-rent" class="modal">
+          <div class="modal-content">
+            <h4>Rent Tool</h4>
+            <p>You Rented -- {{this.name}}</p>
+          </div>
+          <div class="modal-footer">
+            <a href="/tools/{{this.id}}" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
         </div>
-        <div class="modal-footer">
-          <a href="/tools/{{this.id}}" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-        </div>
-      </div>
-    
+
       </div>
       {{/each}}
 
