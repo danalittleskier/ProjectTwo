@@ -80,27 +80,44 @@ var API = {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var $toolName = $("#tool-name");
-  var $toolImage = $("#tool-image");
-  var $toolDescription = $("#tool-description");
-  var $toolCategory = $("#tool-category");
-  var $toolPrice = $("#tool-price");
+  var $toolName = $("#tool-name").val();
+  var $toolImage = $("#tool-image").val();
+  var $toolDescription = $("#tool-description").val();
+  var $toolCategory = $("#tool-category").val();
+  var $toolPrice = $("#tool-price").val();
+
+  //Validation
+  if ($toolName === "") {
+    alert("You must enter a tool name!");
+    return;
+  }
+  if ($toolDescription === ""){
+    alert("You must enter a description!");
+    return;
+  }
+  if (!$toolCategory || $toolCategory === "") {
+    alert("You must enter a category!");
+    return;
+  }
+  if ($toolPrice === "" || isNaN($toolPrice)) {
+    alert("You must enter a number for a price");
+    return;
+  }
+  //insert placeholder if no image was added
+  if ($toolImage === "") {
+    $toolImage = "../images/tools_placeholder.png";
+  }
 
   var tool = {
-    name: $toolName.val().trim(),
-    image: $toolImage.val().trim(),
-    description: $toolDescription.val().trim(),
-    category: $toolCategory.val().trim(),
-    price: $toolPrice.val().trim(),
-    renter: 2,
+    name: $toolName,
+    image: $toolImage,
+    description: $toolDescription,
+    category: $toolCategory,
+    price: $toolPrice,
+    renter: null,
     rented: false,
     MemberId: 1
   };
-
-  if (!($toolName && $toolDescription)) {
-    alert("You must enter a tool name and description!");
-    return;
-  }
 
   API.saveTool(tool).then(function() {
     //refreshExamples();
@@ -112,10 +129,6 @@ var handleFormSubmit = function(event) {
   $toolCategory.val("");
   $toolPrice.val(0);
 };
-
-// var renderToolByCategory = function(event) {
-//   var
-// })
 
 var handleRentSubmit = function(event) {
   event.preventDefault();
